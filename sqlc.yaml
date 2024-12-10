@@ -1,0 +1,19 @@
+version: "2"
+cloud:
+    project: "01HZ901G8CS74Z7QAS255B3PV5"
+sql:
+    - engine: "postgresql"
+      queries: "db/query"
+      schema: "db/migration"
+      database:
+        uri: "postgres://root:root@localhost:5435/apollo_dev"
+      gen:
+          go:
+              package: "apollo"
+              out: "db/sqlc_gen"
+              emit_json_tags: true
+              emit_interface: true
+              emit_exact_table_names: true
+plugins: []
+rules: []
+options: {}
